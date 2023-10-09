@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
@@ -24,6 +25,7 @@ const AuthRoute = () => {
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
     });
+    console.log(`listen to event response : ${session}`);
     //FIXME : Problem is here
     //TODO: After that, use the subscription method to unsubscribe to preven data leaking
     return () => subscription.unsubscribe();

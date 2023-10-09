@@ -7,6 +7,9 @@ import AuthRoute from "./components/AuthRoute";
 import Home from "./pages/Home";
 
 function App() {
+  //FIXME : Create the authentication here
+
+
   return (
     <>
       <Container
@@ -15,6 +18,7 @@ function App() {
       >
         <div className="w-100" style={{ maxWidth: "400px" }}>
           <Routes>
+          {/* TODO: Passed the key and session as a prop to the AuthRoute component */}
             <Route element={<AuthRoute />}>
               <Route path="/" element={<Home />}></Route>
               <Route path="/home" element={<Home />}></Route>
